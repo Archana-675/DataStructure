@@ -1,72 +1,23 @@
 import java.util.*;
-class Node{
-  int data;
-  Node next;
-}
-class Main 
-{
-    public static void insert(Node head)
-    {
-        Scanner sc=new Scanner(System.in);
-        int pos=sc.nextInt();
-        int c=0;
-        Node p=head;
-        while(c<(pos-1) && p.next!=null)
-        {
-            p=p.next;
-            c++;
-        }
-        if(c==(pos-1))
-        {
-            Node ob=new Node();
-            ob.data=sc.nextInt();
-            ob.next=p.next;
-            p.next=ob;
-        }
-        else{
-            System.out.println("Pos excxeeds length");
-        }
+public class CountEvenOdd {
+    public static void main(String[] args) {
+        int[] arr = {5, 7, 8, 11, 3, 2};
+        countEvenOdd(arr);
     }
-    public static void display(Node head)
-    {
-        Node t=head.next;
-         while(t!=null)
-        {
-            System.out.print(t.data+" ");
-            t=t.next;
+
+    public static void countEvenOdd(int[] arr) {
+        int evenCount = 0;
+        int oddCount = 0;
+
+        for (int num : arr) {
+            if (num % 2 == 0) {
+                evenCount++;
+            } else {
+                oddCount++;
+            }
         }
-    }
-    public static void sum(Node head)
-    {
-       int evencount =0;
-       int oddcount =0;
-       Node t = head.next;
-       while(t != null){
-           if(t.data %2 ==0){
-               evencount++;
-               t = t.next;
-           }
-           else{
-               oddcount++;
-               t = t.next;
-           }
-           
-       }
-       System.out.println("\nEven Count ="+evencount );
-       System.out.println("Odd Count ="+oddcount);
-    }
-    public static void main (String[] args) 
-    {
-        Node head=new Node();
-        head.next=null;
-        Scanner sc=new  Scanner(System.in);
-        int n=sc.nextInt();
-        for(int i=0;i<n;i++)
-        {
-            insert(head);
-        }
-        display(head);
-        sum(head);
-        
+        System.out.println("Sum of even numbers: " + evenCount);
+        System.out.println("Sum of odd numbers: " + oddCount);
     }
 }
+
