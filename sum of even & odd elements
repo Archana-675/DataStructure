@@ -6,7 +6,8 @@ public class SumEvenOdd {
     }
 
     public static void sumEvenOdd(int[] arr) {
-        int evenSum = 0, oddSum = 0;
+        int evenSum = 0;
+        int oddSum = 0;
 
         for (int num : arr) {
             if (num % 2 == 0) {
